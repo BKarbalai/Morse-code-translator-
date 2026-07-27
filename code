@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string letterMorse[26] = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.." };
+string numberMorse[10] = { "-----", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----." };
+int main () {
+    char c;
+    int index;
+    string code;
+   cout << "Enter a letter or number: ";
+cin >> c; 
+
+    if (c >= 'A' && c <= 'Z') {
+        index = c - 'A';
+        code = letterMorse[index];
+    } else if (c >= '0' && c <= '9') {
+        index = c - '0';
+    code = numberMorse[index];
+} else {
+    code = ""; // Non-alphanumeric characters are ignored
+} 
+    
+cout  << "Morse code for " << c << " is: " << code << endl;
+
+    return 0;
+}
